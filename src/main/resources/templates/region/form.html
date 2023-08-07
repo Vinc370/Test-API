@@ -1,0 +1,18 @@
+<html>
+    <body>
+        <div>
+            <form th:action="@{/region/save}" method="POST" th:object="${region}">
+                <input id="id" name="id" th:field="*{regionID}" placeholder="id" type="text">
+                <br>
+                <input id="name" name="name" th:field="*{name}" placeholder="name" type="text">
+                <br>
+                <input id="latitude" name="latitude" th:field="*{latitude}" placeholder="latitude" type="text">
+                <br>
+                <input id="longitude" name="longitude" th:field="*{longitude}" placeholder="longitude" type="text">
+                <br>
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </body>
+</html>

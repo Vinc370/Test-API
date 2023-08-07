@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Index</title>
+    </head>
+    <body>
+        <div>
+            <a th:href="@{employee/form}">Create</a>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Fullname</th>
+                        <th>Department ID</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="employee: ${employee}">
+                        <td th:text="${employee.employeeID}"></td>
+                        <td th:text="${employee.fullName}"></td>
+                        <td th:text="${employee.department.getDepartmentID()}"></td>
+                        <td><a th:href="@{employee/form/{id} (id=${employee.employeeID})}">Edit</a>
+                             | 
+                            <a th:href="@{employee/delete/{id} (id=${employee.employeeID})}">Delete</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

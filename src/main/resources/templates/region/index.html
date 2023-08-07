@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Index</title>
+    </head>
+    <body>
+        <div>
+            <a th:href="@{region/form}">Create</a>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Region</th>
+                        <th>Latitude</th>
+                        <th>Longitude</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="region: ${region}">
+                        <td th:text="${region.regionID}"></td>
+                        <td th:text="${region.name}"></td>
+                        <td th:text="${region.Latitude}"></td>
+                        <td th:text="${region.Longitude}"></td>
+                        <td><a th:href="@{region/form/{id} (id=${region.regionID})}">Edit</a>
+                             | 
+                            <a th:href="@{region/delete/{id} (id=${region.regionID})}">Delete</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>Index</title>
+    </head>
+    <body>
+        <div>
+            <a th:href="@{attendance/form}">Create</a>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Department</th>
+                        <th>Region</th>
+                        <th>Date</th>
+                        <th>Clock In</th>
+                        <th>Clock Out</th>
+                        <th>Work Hour</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="attendance: ${attendance}">
+                        <td th:text="${attendance.employee.employeeID}"></td>
+                        <td th:text="${attendance.department.getDepartmentID}"></td>
+                        <td th:text="${attendance.region.getRegionID}"></td>
+                        <td th:text="${attendance.attendanceDate}"></td>
+                        <td th:text="${attendance.clockIn}"></td>
+                        <td th:text="${attendance.clockOut}"></td>
+                        <td th:text="${attendance.workHour}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<html>
+    <body>
+        <div>
+            <form th:action="@{/employee/save}" method="POST" th:object="${employee}">
+                <input id="id" name="id" th:field="*{employeeID}" placeholder="id" type="text">
+                <br>
+                <input id="name" name="name" th:field="*{fullName}" placeholder="name" type="text">
+                <br>
+                <!-- th:field diambil dari model-->
+                <!-- untuk yang menggunakan annotasi $ diambil dari controller-->
+                <select class="form-select" aria-label="Default select example" th:field="*{department}">
+                    <option th:each="employees : ${employees}" th:selected="${employees.department.getDepartmentID()}" th:value="${employees.department.getDepartmentID()}" th:text="${employees.department.getName()}"></option>
+                </select>
+                <br>
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </body>
+</html>

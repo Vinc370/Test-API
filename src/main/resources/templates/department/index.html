@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Index</title>
+    </head>
+    <body>
+        <div>
+            <a th:href="@{department/form}">Create</a>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Department</th>
+                        <th>Region ID</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="department: ${department}">
+                        <td th:text="${department.departmentID}"></td>
+                        <td th:text="${department.name}"></td>
+                        <td th:text="${department.region.getRegionID()}"></td>
+                        <td><a th:href="@{department/form/{id} (id=${department.departmentID})}">Edit</a>
+                             | 
+                            <a th:href="@{department/delete/{id} (id=${department.departmentID})}">Delete</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
