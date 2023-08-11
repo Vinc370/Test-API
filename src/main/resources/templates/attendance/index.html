@@ -19,9 +19,9 @@
                 </thead>
                 <tbody>
                     <tr th:each="attendance: ${attendance}">
-                        <td th:text="${attendance.employee.getEmployeeID}"></td>
-                        <td th:text="${attendance.department.getDepartmentID}"></td>
-                        <td th:text="${attendance.region.getRegionID}"></td>
+                        <td th:text="${attendance.employee.getEmployeeID()}"></td>
+                        <td th:text="${attendance.department.getDepartmentID()}"></td>
+                        <td th:text="${attendance.region.getRegionID()}"></td>
                         <td th:text="${attendance.attendanceDate}"></td>
                         <td th:text="${attendance.clockIn}"></td>
                         <td th:text="${attendance.clockOut}"></td>

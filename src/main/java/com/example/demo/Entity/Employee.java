@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -12,6 +13,11 @@ public class Employee {
     @Id
     private int employee_id;
     private String fullname;
+    private String email;
+
+    @OneToOne
+    @JoinColumn(name = "role_id")
+    private Role role;
 
     @ManyToOne
     @JoinColumn(name = "department_id")
@@ -37,13 +43,29 @@ public class Employee {
     public Department getDepartment() {
         return Department;
     }
+
     public void setDepartment(Department Department) {
         this.Department = Department;
+    }
+    
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
     public String getFullName() {
         return fullname;
     }
     public void setFullName(String fullname) {
         this.fullname = fullname;
+    }
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

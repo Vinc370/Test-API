@@ -39,5 +39,10 @@ public class EmployeeImplement implements EmployeeService<com.example.demo.Entit
     public Employee Get(int model) {
         return employeeRepository.findById(model).get();
     }
+
+    @Override
+    public Integer findIdbyEmail(String email) {
+        return employeeRepository.findIdbyEmail(email);
+    }
     
 }
